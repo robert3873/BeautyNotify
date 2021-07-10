@@ -57,7 +57,7 @@ for item in images:
 notify = line.LineNotify()
 
 #edge
-token = 'oUXboiWBLQAwPxBls376oGpkDsBj6WxOnldOO9kN1M2'
+token = ''
 
 #default message
 message = '\n你今天表特了嗎？\n'+article_detail
