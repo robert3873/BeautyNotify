@@ -5,9 +5,11 @@ PTT表特版定時通知程式，搭配Line Notify服務進行通知。
 - getBeaury.py 主程式
 - crawlFunc.py 爬蟲程式
 - sendNotify.py LINE Notify通知程式
-- requirments.txt 本次使用的python套件
+- requirements.txt 本次使用的python套件
 
 ## 使用方式
+首先必須先安裝相關套件，請參見requirements.txt。
+`pip install -r requirements.txt`
 
 ### 執行命令
 `python getBeaury.py`
