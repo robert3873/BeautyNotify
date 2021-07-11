@@ -9,6 +9,7 @@ PTT表特版定時通知程式，搭配Line Notify服務進行通知。
 
 ## 使用方式
 首先必須先安裝相關套件，請參見requirements.txt。
+
 `pip install -r requirements.txt`
 
 ### 執行命令
