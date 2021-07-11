@@ -1,6 +1,7 @@
 import sys
 import io
 import random
+import re
 
 import requests as rs
 from bs4 import BeautifulSoup
@@ -30,7 +31,7 @@ article_urls = []
 for article in articles:
 
     title = article.select_one(".title>a")
-    print(title)
+
     if title:
         title_name = str(title.text)
         title_url = title.get('href')
@@ -54,8 +55,10 @@ images = crawl.soup_page(detail_page).select("#main-content>a")
 
 image_list = []
 for item in images:
-    image_list.append(item.text)
-
+    pattern = re.compile('.*\.(jpg|gif|png)$')
+    if pattern.match(item.text):
+        image_list.append(item.text)
+# print(image_list)
 
 notify = line.LineNotify()
 
