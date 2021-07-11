@@ -48,17 +48,14 @@ for article in articles:
     article_urls.append(title_url)
 
 
-draw = random.randrange(len(article_urls))
-article_detail = article_urls[draw]
-detail_page = crawl.get_page(article_detail)
-images = crawl.soup_page(detail_page).select("#main-content>a")
+image_list = False
+while(image_list == False):
+    draw = random.randrange(len(article_urls))
+    article_detail = article_urls[draw]
+    detail_page = crawl.get_page(article_detail)
+    images = crawl.soup_page(detail_page).select("#main-content>a")
+    image_list = crawl.check_images(images)
 
-image_list = []
-for item in images:
-    pattern = re.compile('.*\.(jpg|gif|png)$')
-    if pattern.match(item.text):
-        image_list.append(item.text)
-# print(image_list)
 
 notify = line.LineNotify()
 
@@ -86,4 +83,4 @@ statment = {
 
 if switch(now) != '':
     message = switch(now)+message
-    result = notify.lineNotifyMessage(token, message, image_list[0])
+    result = notify.lineNotifyMessage(token, message, image_list[random.randrange(len(image_list))])
