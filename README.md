@@ -14,6 +14,7 @@ PTT表特版定時通知程式，搭配Line Notify服務進行通知。
 
 ### 執行命令
 `python getBeaury.py`
+
 可搭配排程執行
 
 ### 可自訂部分
