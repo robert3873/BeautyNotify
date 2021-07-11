@@ -30,9 +30,12 @@ article_urls = []
 for article in articles:
 
     title = article.select_one(".title>a")
+    print(title)
     if title:
         title_name = str(title.text)
         title_url = title.get('href')
+    else:
+        continue
     
     if '正妹' not in title_name:
         continue
